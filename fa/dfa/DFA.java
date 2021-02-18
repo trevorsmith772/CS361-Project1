@@ -1,10 +1,18 @@
 package fa.dfa;
 
+import java.util.Map;
 import java.util.Set;
 
 import fa.State;
 
 public class DFA implements DFAInterface {
+
+    /* Instance Variables */
+    private Set<DFAState> totalStates;
+    private DFAState initialState;
+    private Set<DFAState> finalStates;
+    private Set<String> alphabet;
+    private Map<String, DFAState> transitions;
 
     @Override
     public void addStartState(String name) {
@@ -66,4 +74,8 @@ public class DFA implements DFAInterface {
         return null;
     }
     
+    public String toString(){
+        //TODO
+        return null;
+    }
 }
