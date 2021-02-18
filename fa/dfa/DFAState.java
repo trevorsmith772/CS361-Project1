@@ -11,4 +11,8 @@ public class DFAState extends State {
         this.name = name;
         transitions = new DFAState[2];
     }
+
+    public DFAState[] getTransitions(){
+        return transitions;
+    }
 }
