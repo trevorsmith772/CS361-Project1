@@ -8,8 +8,8 @@ import fa.State;
 public class DFAState extends State {
     
     /* Instance Variables */
-    String name;    //name of the state
-    private Map<Character, DFAState> transitions = new HashMap<>(); //transition map
+    private String name;    //name of the state
+    private Map<Character, DFAState> transitions; //transition map
 
     /**
      * Cosntructor for DFA state
@@ -18,7 +18,7 @@ public class DFAState extends State {
      */
     public DFAState(String name){
         this.name = name;
-        transitions = null;
+        transitions = new HashMap<>();
     }
 
     /**
@@ -38,5 +38,14 @@ public class DFAState extends State {
      */
     public Map<Character, DFAState> getTransitions(){
         return transitions;
+    }
+
+    /**
+     * Getter for name
+     * 
+     * @return the name of the state
+     */
+    public String getName() {
+        return name;
     }
 }

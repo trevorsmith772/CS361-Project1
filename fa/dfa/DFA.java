@@ -78,7 +78,7 @@ public class DFA implements DFAInterface {
      * @return the state we want to get
      */
     private DFAState get(String name){
-        DFAState[] array = (DFAState[]) totalStates.toArray();
+        DFAState[] array = totalStates.toArray(new DFAState[totalStates.size()]);
         DFAState state = null;
         for(DFAState a : array){
             if(a.getName().equals(name)){
