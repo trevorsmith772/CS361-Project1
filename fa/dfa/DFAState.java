@@ -36,7 +36,8 @@ public class DFAState extends State {
      * 
      * @return transitions for the state
      */
-    public Map<Character, DFAState> getTransitions(){
+    public Map<Character, DFAState> getTransition(){
+        
         return transitions;
     }
 

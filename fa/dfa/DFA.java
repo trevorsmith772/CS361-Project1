@@ -29,9 +29,17 @@ public class DFA implements DFAInterface {
      * @param name - the name of the added start state
      */
     public void addStartState(String name) {
-        DFAState startState = new DFAState(name);
-        totalStates.add(startState);
-        initialState = startState;
+
+        for(DFAState state : finalStates){
+            if(state.getName().equals(name)){
+                initialState = state;
+            }
+        }
+        if(initialState == null){
+            DFAState startState = new DFAState(name);
+            totalStates.add(startState);
+            initialState = startState;
+        }
     }
 
     /**
@@ -89,22 +97,38 @@ public class DFA implements DFAInterface {
         return state;
     }
 
-    @Override
+    /**
+     * Getter for states
+     * 
+     * @return the set of states
+     */
     public Set<? extends State> getStates() {
         return totalStates;
     }
 
-    @Override
+    /**
+     * Getter for final states
+     * 
+     * @return the set of final states
+     */
     public Set<? extends State> getFinalStates() {
         return finalStates;
     }
 
-    @Override
+    /**
+     * Getter for start state
+     * 
+     * @return the initial state
+     */
     public State getStartState() {
         return initialState;
     }
 
-    @Override
+    /**
+     * Getter for alphabet
+     * 
+     * @return the set of characters
+     */
     public Set<Character> getABC() {
         return alphabet;
     }
@@ -115,10 +139,19 @@ public class DFA implements DFAInterface {
         return false;
     }
 
-    @Override
+    /**
+     * Gets the state that will
+     *  be transitioned to, given
+     *  a from state and an input 
+     *  character
+     * 
+     * @param from - state to be transitioned from
+     * @param onSymb - input character
+     * @return the state we are transitioning to
+     */
     public State getToState(DFAState from, char onSymb) {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return from.getTransition().get(onSymb);
     }
 
     public String toString() {
