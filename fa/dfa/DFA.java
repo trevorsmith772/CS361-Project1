@@ -71,20 +71,17 @@ public class DFA implements DFAInterface {
 
     @Override
     public Set<? extends State> getStates() {
-        // TODO Auto-generated method stub
-        return null;
+        return totalStates;
     }
 
     @Override
     public Set<? extends State> getFinalStates() {
-        // TODO Auto-generated method stub
-        return null;
+        return finalStates;
     }
 
     @Override
     public State getStartState() {
-        // TODO Auto-generated method stub
-        return null;
+        return initialState;
     }
 
     @Override
