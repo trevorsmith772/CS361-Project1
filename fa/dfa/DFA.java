@@ -1,9 +1,9 @@
 package fa.dfa;
 
+import fa.State;
 import java.util.HashSet;
 import java.util.Set;
 
-import fa.State;
 
 public class DFA implements DFAInterface {
 
@@ -120,10 +120,17 @@ public class DFA implements DFAInterface {
         return null;
     }
 
+    @Override
     public String toString() {
         String output = "";
-        output += "Q = { a b }\n" + "Sigma = { 0 1 }\n" + "delta =\n" + "0   1\n" + "a   a   b\n" + "b   a   b\n"
-                + "q0 = a\n" + "F = { b }";
+        output += "Q = { " + totalStates.toString() + " }\n" + 
+        "Sigma = { " + alphabet.toString() + " }\n" + 
+        "delta =\n" + 
+        "           0   1\n" + 
+        "       a   a   b\n" + 
+        "       b   a   b\n" + 
+        "q0 = " + initialState.toString() + "\n" + 
+        "F = { " + finalStates.toString() + " }";
         return output;
     }
 }
