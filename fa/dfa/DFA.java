@@ -12,7 +12,7 @@ public class DFA implements DFAInterface {
     private DFAState initialState;
     private Set<DFAState> finalStates;
     private Set<String> alphabet;
-    private Map<String, DFAState> transitions;
+    private Set<Map<String, DFAState>> transitions;
 
     @Override
     public void addStartState(String name) {
