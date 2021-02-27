@@ -66,7 +66,12 @@ public class DFA implements DFAInterface {
      * @param toState - state we transition to
      */
     public void addTransition(String fromState, char onSymb, String toState) {
+       // totalStates.get
     }
+
+    @Override
+    public Set<? extends State> getStates() {
+        // TODO Auto-generated method stub
         return null;
     }
 
