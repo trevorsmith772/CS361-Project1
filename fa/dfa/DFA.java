@@ -1,7 +1,6 @@
 package fa.dfa;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import fa.State;
@@ -47,15 +46,28 @@ public class DFA implements DFAInterface {
         totalStates.add(newState);
     }
 
-    @Override
+    /**
+     * Adds a new final state to the dfa
+     * 
+     * @param name - the name of the new 
+     *  final state
+     */
     public void addFinalState(String name) {
-        // TODO Auto-generated method stub
-
+        DFAState finalState = new DFAState(name);
+        totalStates.add(finalState);
+        finalStates.add(finalState);
     }
 
-    @Override
+    /**
+     * Adds a new transition to the dfa,
+     *  or rather to the state we're transitioning
+     *  from
+     * 
+     * @param fromState - current state
+     * @param onSymb - input character from alphabet
+     * @param toState - state we transition to
+     */
     public void addTransition(String fromState, char onSymb, String toState) {
-        // TODO Auto-generated method stub
     		
     }
 
