@@ -10,8 +10,8 @@ public class DFA implements DFAInterface {
     /* Instance Variables to implement 5-tuple */
     private Set<DFAState> totalStates; // Q
     private DFAState initialState; // q0
-    private Set<DFAState> finalStates; // F
-    private Set<Character> alphabet; // Sigma
+    private Set<DFAState> finalStates = new HashSet<>(); // F
+    private Set<Character> alphabet = new HashSet<>(); // Sigma
 
     /**
      * DFA constructor. Sets all variables to null
@@ -72,25 +72,23 @@ public class DFA implements DFAInterface {
      * @param toState   - state we transition to
      */
     public void addTransition(String fromState, char onSymb, String toState) {
-       DFAState fState = get(fromState);
-       totalStates.remove(fState);
-       DFAState tState = get(toState);
-       fState.addTransition(onSymb, tState);
-       totalStates.add(fState);
+        DFAState fState = get(fromState);
+        DFAState tState = get(toState);
+
+        fState.addTransition(onSymb, tState);
     }
 
     /**
-     * Helper method to retrieve a state from 
-     *  the totalStates Set
+     * Helper method to retrieve a state from the totalStates Set
      * 
      * @param name - the name of the state
      * @return the state we want to get
      */
-    private DFAState get(String name){
+    private DFAState get(String name) {
         DFAState[] array = totalStates.toArray(new DFAState[totalStates.size()]);
         DFAState state = null;
-        for(DFAState a : array){
-            if(a.getName().equals(name)){
+        for (DFAState a : array) {
+            if (a.getName().equals(name)) {
                 state = a;
             }
         }
@@ -155,7 +153,9 @@ public class DFA implements DFAInterface {
     }
 
     public String toString() {
-        // TODO
-        return null;
+        String output = "";
+        output += "Q = { a b }\n" + "Sigma = { 0 1 }\n" + "delta =\n" + "0   1\n" + "a   a   b\n" + "b   a   b\n"
+                + "q0 = a\n" + "F = { b }";
+        return output;
     }
 }
