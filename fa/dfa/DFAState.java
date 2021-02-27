@@ -1,18 +1,21 @@
 package fa.dfa;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import fa.State;
 
 public class DFAState extends State {
     
     /* Instance Variables */
-    private DFAState[] transitions;
+    private Map<String, DFAState> transitions = new HashMap<>();
 
     public DFAState(String name){
         this.name = name;
-        transitions = new DFAState[2];
+        transitions = null;
     }
 
-    public DFAState[] getTransitions(){
+    public Map<String, DFAState> getTransitions(){
         return transitions;
     }
 }

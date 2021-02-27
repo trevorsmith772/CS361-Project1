@@ -1,5 +1,6 @@
 package fa.dfa;
 
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -7,12 +8,11 @@ import fa.State;
 
 public class DFA implements DFAInterface {
 
-    /* Instance Variables */
-    private Set<DFAState> totalStates;
-    private DFAState initialState;
-    private Set<DFAState> finalStates;
-    private Set<String> alphabet;
-    private Set<Map<String, DFAState>> transitions;
+    /* Instance Variables to implement 5-tuple */
+    private Set<DFAState> totalStates = new HashSet<>(); //Q
+    private DFAState initialState;  //q0
+    private Set<DFAState> finalStates = new HashSet<>();  //F
+    private Set<String> alphabet = new HashSet<>();   //Sigma
 
     /**
      * DFA constructor. Sets
@@ -23,7 +23,6 @@ public class DFA implements DFAInterface {
         initialState = null;
         finalStates = null;
         alphabet = null;
-        transitions = null;
     }
 
     /**
@@ -38,10 +37,14 @@ public class DFA implements DFAInterface {
         initialState = startState;
     }
 
-    @Override
+    /**
+     * Adds a new state to the dfa
+     * 
+     * @param name - the name of the new state
+     */
     public void addState(String name) {
-        // TODO Auto-generated method stub
-
+        DFAState newState = new DFAState(name);
+        totalStates.add(newState);
     }
 
     @Override
