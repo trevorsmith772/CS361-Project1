@@ -1,15 +1,14 @@
 package fa.dfa;
 
+import fa.State;
 import java.util.HashSet;
 import java.util.Set;
 
-import fa.State;
 
-//T
 public class DFA implements DFAInterface {
 
     /* Instance Variables to implement 5-tuple */
-    private Set<DFAState> totalStates = new HashSet<>(); // Q
+    private Set<DFAState> totalStates; // Q
     private DFAState initialState; // q0
     private Set<DFAState> finalStates = new HashSet<>(); // F
     private Set<Character> alphabet = new HashSet<>(); // Sigma
@@ -18,10 +17,10 @@ public class DFA implements DFAInterface {
      * DFA constructor. Sets all variables to null
      */
     public DFA() {
-        totalStates = null;
+        totalStates = new HashSet<>();
         initialState = null;
-        finalStates = null;
-        alphabet = null;
+        finalStates = new HashSet<>();
+        alphabet = new HashSet<>();
     }
 
     /**
@@ -30,9 +29,17 @@ public class DFA implements DFAInterface {
      * @param name - the name of the added start state
      */
     public void addStartState(String name) {
-        DFAState startState = new DFAState(name);
-        totalStates.add(startState);
-        initialState = startState;
+
+        for(DFAState state : finalStates){
+            if(state.getName().equals(name)){
+                initialState = state;
+            }
+        }
+        if(initialState == null){
+            DFAState startState = new DFAState(name);
+            totalStates.add(startState);
+            initialState = startState;
+        }
     }
 
     /**
@@ -65,47 +72,61 @@ public class DFA implements DFAInterface {
      * @param toState   - state we transition to
      */
     public void addTransition(String fromState, char onSymb, String toState) {
-       DFAState fState = get(fromState);
-       DFAState tState = get(toState);
+        DFAState fState = get(fromState);
+        DFAState tState = get(toState);
 
-       fState.addTransition(onSymb, tState);
+        fState.addTransition(onSymb, tState);
     }
 
     /**
-     * Helper method to retrieve a state from 
-     *  the totalStates Set
+     * Helper method to retrieve a state from the totalStates Set
      * 
      * @param name - the name of the state
      * @return the state we want to get
      */
-    private DFAState get(String name){
-        DFAState[] array = (DFAState[]) totalStates.toArray();
+    private DFAState get(String name) {
+        DFAState[] array = totalStates.toArray(new DFAState[totalStates.size()]);
         DFAState state = null;
-        for(DFAState a : array){
-            if(a.getName().equals(name)){
+        for (DFAState a : array) {
+            if (a.getName().equals(name)) {
                 state = a;
             }
         }
         return state;
     }
 
-    //private void set
-    @Override
+    /**
+     * Getter for states
+     * 
+     * @return the set of states
+     */
     public Set<? extends State> getStates() {
         return totalStates;
     }
 
-    @Override
+    /**
+     * Getter for final states
+     * 
+     * @return the set of final states
+     */
     public Set<? extends State> getFinalStates() {
         return finalStates;
     }
 
-    @Override
+    /**
+     * Getter for start state
+     * 
+     * @return the initial state
+     */
     public State getStartState() {
         return initialState;
     }
 
-    @Override
+    /**
+     * Getter for alphabet
+     * 
+     * @return the set of characters
+     */
     public Set<Character> getABC() {
         return alphabet;
     }
@@ -116,14 +137,32 @@ public class DFA implements DFAInterface {
         return false;
     }
 
-    @Override
+    /**
+     * Gets the state that will
+     *  be transitioned to, given
+     *  a from state and an input 
+     *  character
+     * 
+     * @param from - state to be transitioned from
+     * @param onSymb - input character
+     * @return the state we are transitioning to
+     */
     public State getToState(DFAState from, char onSymb) {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return from.getTransition().get(onSymb);
     }
 
+    
     public String toString() {
-        // TODO
-        return null;
+        String output = "";
+        output += "Q = { " + totalStates.toString() + " }\n" + 
+        "Sigma = { " + alphabet.toString() + " }\n" + 
+        "delta =\n" + 
+        "           " + alphabet.toString() + "\n" + 
+        "       a   a   b\n" + 
+        "       b   a   b\n" + 
+        "q0 = " + initialState.toString() + "\n" + 
+        "F = { " + finalStates.toString() + " }";
+        return output;
     }
 }
