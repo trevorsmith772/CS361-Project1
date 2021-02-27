@@ -66,9 +66,31 @@ public class DFA implements DFAInterface {
      * @param toState - state we transition to
      */
     public void addTransition(String fromState, char onSymb, String toState) {
-       // totalStates.get
+       DFAState fState = get(fromState);
+       DFAState tState = get(toState);
+
+       fState.addTransition(onSymb, tState);
     }
 
+    /**
+     * Helper method to retrieve a state from 
+     *  the totalStates Set
+     * 
+     * @param name - the name of the state
+     * @return the state we want to get
+     */
+    private DFAState get(String name){
+        DFAState[] array = (DFAState[]) totalStates.toArray();
+        DFAState state = null;
+        for(DFAState a : array){
+            if(a.getName().equals(name)){
+                state = a;
+            }
+        }
+        return state;
+    }
+
+    //private void set
     @Override
     public Set<? extends State> getStates() {
         return totalStates;
