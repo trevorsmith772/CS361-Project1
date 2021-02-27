@@ -14,9 +14,18 @@ public class DFA implements DFAInterface {
     private Set<String> alphabet;
     private Set<Map<String, DFAState>> transitions;
 
+    public DFA(){
+        this.totalStates = null;
+        this.initialState = null;
+        this.finalStates = null;
+        this.alphabet = null;
+        this.transitions = null;
+    }
+
     @Override
     public void addStartState(String name) {
-        // TODO Auto-generated method stub
+        this.initialState = new DFAState(name);
+        
 
     }
 
