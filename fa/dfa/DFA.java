@@ -10,8 +10,8 @@ public class DFA implements DFAInterface {
     /* Instance Variables to implement 5-tuple */
     private Set<DFAState> totalStates; // Q
     private DFAState initialState; // q0
-    private Set<DFAState> finalStates = new HashSet<>(); // F
-    private Set<Character> alphabet = new HashSet<>(); // Sigma
+    private Set<DFAState> finalStates; // F
+    private Set<Character> alphabet; // Sigma
 
     /**
      * DFA constructor. Sets all variables to null
@@ -65,9 +65,10 @@ public class DFA implements DFAInterface {
      */
     public void addTransition(String fromState, char onSymb, String toState) {
        DFAState fState = get(fromState);
+       totalStates.remove(fState);
        DFAState tState = get(toState);
-
        fState.addTransition(onSymb, tState);
+       totalStates.add(fState);
     }
 
     /**
@@ -88,7 +89,6 @@ public class DFA implements DFAInterface {
         return state;
     }
 
-    //private void set
     @Override
     public Set<? extends State> getStates() {
         return totalStates;
