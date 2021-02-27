@@ -5,6 +5,7 @@ import java.util.Set;
 
 import fa.State;
 
+//T
 public class DFA implements DFAInterface {
 
     /* Instance Variables to implement 5-tuple */
@@ -47,8 +48,7 @@ public class DFA implements DFAInterface {
     /**
      * Adds a new final state to the dfa
      * 
-     * @param name - the name of the new 
-     *  final state
+     * @param name - the name of the new final state
      */
     public void addFinalState(String name) {
         DFAState finalState = new DFAState(name);
@@ -57,13 +57,12 @@ public class DFA implements DFAInterface {
     }
 
     /**
-     * Adds a new transition to the dfa,
-     *  or rather to the state we're transitioning
-     *  from
+     * Adds a new transition to the dfa, or rather to the state we're transitioning
+     * from
      * 
      * @param fromState - current state
-     * @param onSymb - input character from alphabet
-     * @param toState - state we transition to
+     * @param onSymb    - input character from alphabet
+     * @param toState   - state we transition to
      */
     public void addTransition(String fromState, char onSymb, String toState) {
        DFAState fState = get(fromState);
