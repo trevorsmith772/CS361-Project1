@@ -14,19 +14,28 @@ public class DFA implements DFAInterface {
     private Set<String> alphabet;
     private Set<Map<String, DFAState>> transitions;
 
+    /**
+     * DFA constructor. Sets
+     *  all variables to null
+     */
     public DFA(){
-        this.totalStates = null;
-        this.initialState = null;
-        this.finalStates = null;
-        this.alphabet = null;
-        this.transitions = null;
+        totalStates = null;
+        initialState = null;
+        finalStates = null;
+        alphabet = null;
+        transitions = null;
     }
 
-    @Override
+    /**
+     * Adds a new start state 
+     *  to the dfa
+     * @param name - the name of the added
+     *  start state
+     */
     public void addStartState(String name) {
-        this.initialState = new DFAState(name);
-        
-
+        DFAState startState = new DFAState(name);
+        totalStates.add(startState);
+        initialState = startState;
     }
 
     @Override
