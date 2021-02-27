@@ -5,6 +5,8 @@ import java.util.Set;
 
 import fa.State;
 
+
+//hello
 public class DFA implements DFAInterface {
 
     /* Instance Variables to implement 5-tuple */
@@ -12,6 +14,7 @@ public class DFA implements DFAInterface {
     private DFAState initialState; // q0
     private Set<DFAState> finalStates = new HashSet<>(); // F
     private Set<Character> alphabet = new HashSet<>(); // Sigma
+
 
     /**
      * DFA constructor. Sets all variables to null
