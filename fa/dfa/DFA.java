@@ -152,7 +152,7 @@ public class DFA implements DFAInterface {
         return from.getTransition().get(onSymb);
     }
 
-    @Override
+    
     public String toString() {
         String output = "";
         output += "Q = { " + totalStates.toString() + " }\n" + 
