@@ -35,7 +35,7 @@ public class DFA implements DFAInterface {
     @Override
     public void addTransition(String fromState, char onSymb, String toState) {
         // TODO Auto-generated method stub
-
+    		
     }
 
     @Override
