@@ -9,16 +9,15 @@ import fa.State;
 public class DFA implements DFAInterface {
 
     /* Instance Variables to implement 5-tuple */
-    private Set<DFAState> totalStates = new HashSet<>(); //Q
-    private DFAState initialState;  //q0
-    private Set<DFAState> finalStates = new HashSet<>();  //F
-    private Set<String> alphabet = new HashSet<>();   //Sigma
+    private Set<DFAState> totalStates = new HashSet<>(); // Q
+    private DFAState initialState; // q0
+    private Set<DFAState> finalStates = new HashSet<>(); // F
+    private Set<Character> alphabet = new HashSet<>(); // Sigma
 
     /**
-     * DFA constructor. Sets
-     *  all variables to null
+     * DFA constructor. Sets all variables to null
      */
-    public DFA(){
+    public DFA() {
         totalStates = null;
         initialState = null;
         finalStates = null;
@@ -26,10 +25,9 @@ public class DFA implements DFAInterface {
     }
 
     /**
-     * Adds a new start state 
-     *  to the dfa
-     * @param name - the name of the added
-     *  start state
+     * Adds a new start state to the dfa
+     * 
+     * @param name - the name of the added start state
      */
     public void addStartState(String name) {
         DFAState startState = new DFAState(name);
@@ -56,7 +54,7 @@ public class DFA implements DFAInterface {
     @Override
     public void addTransition(String fromState, char onSymb, String toState) {
         // TODO Auto-generated method stub
-    		
+
     }
 
     @Override
@@ -79,8 +77,7 @@ public class DFA implements DFAInterface {
 
     @Override
     public Set<Character> getABC() {
-        // TODO Auto-generated method stub
-        return null;
+        return alphabet;
     }
 
     @Override
@@ -94,9 +91,9 @@ public class DFA implements DFAInterface {
         // TODO Auto-generated method stub
         return null;
     }
-    
-    public String toString(){
-        //TODO
+
+    public String toString() {
+        // TODO
         return null;
     }
 }
