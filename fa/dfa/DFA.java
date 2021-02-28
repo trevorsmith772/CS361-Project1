@@ -5,17 +5,16 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
- * Description: This class represents a DFA object
- *  that contains variables to represent a 5-tuple.
- *  This class is used in combination with DFADriver to
- *  construct a DFA and return whether given strings are 
- *  accepted or rejected by the DFA.
+ * Description: This class represents a DFA object that contains variables to
+ * represent a 5-tuple. This class is used in combination with DFADriver to
+ * construct a DFA and return whether given strings are accepted or rejected by
+ * the DFA.
  * 
  * @author Trevor Smith (trevorsmith772)
  * @author Brandon Mattaini (brandonmattaini)
  * @author Berto Cisneros (bertocisneros)
  * 
- * Date: 2/28/2021
+ *         Date: 2/28/2021
  */
 public class DFA implements DFAInterface {
 
@@ -42,12 +41,12 @@ public class DFA implements DFAInterface {
      */
     public void addStartState(String name) {
 
-        for(DFAState state : finalStates){
-            if(state.getName().equals(name)){
+        for (DFAState state : finalStates) {
+            if (state.getName().equals(name)) {
                 initialState = state;
             }
         }
-        if(initialState == null){
+        if (initialState == null) {
             DFAState startState = new DFAState(name);
             totalStates.add(startState);
             initialState = startState;
@@ -89,7 +88,7 @@ public class DFA implements DFAInterface {
 
         fState.addTransition(onSymb, tState);
 
-        if(!alphabet.contains(onSymb)){
+        if (!alphabet.contains(onSymb)) {
             alphabet.add(onSymb);
         }
     }
@@ -150,80 +149,77 @@ public class DFA implements DFAInterface {
     @Override
     public boolean accepts(String s) {
         DFAState currState = initialState;
-        for(int i = 0; i < s.length(); i++){
+        for (int i = 0; i < s.length(); i++) {
             currState = getToState(currState, s.charAt(i));
         }
-        if(finalStates.contains(currState)){
+        if (finalStates.contains(currState)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
 
     /**
-     * Gets the state that will
-     *  be transitioned to, given
-     *  a from state and an input 
-     *  character
+     * Gets the state that will be transitioned to, given a from state and an input
+     * character
      * 
-     * @param from - state to be transitioned from
+     * @param from   - state to be transitioned from
      * @param onSymb - input character
      * @return the state we are transitioning to
      */
     public DFAState getToState(DFAState from, char onSymb) {
-        
+
         return from.getTransition().get(onSymb);
     }
 
-
-
-    /*
-     * @return the state, alphabet, table, etc. are printed out
+    /**
+     * Construct the textual representation of the DFA, for example A simple two
+     * state DFA Q = { a b } Sigma = { 0 1 } delta = 0 1 a a b b a b q0 = a F = { b
+     * }
+     * 
+     * The order of the states and the alphabet is the order in which they were
+     * instantiated in the DFA.
+     * 
+     * @return String representation of the DFA
      */
     public String toString() {
         String output = "";
 
         String table = "\t\t";
-        for(char b : alphabet){
+        for (char b : alphabet) {
             table += b + "\t";
         }
         table += "\n";
 
-        for(DFAState target: totalStates){
+        for (DFAState target : totalStates) {
             table += "\t";
             table += target.getName() + "\t";
 
-            for(char c : alphabet){
+            for (char c : alphabet) {
                 table += getToState(target, c).getName() + "\t";
             }
             table += "\n";
         }
 
-
         String finalPrint = "";
         String finalAlph = "";
 
-        for(char alph : alphabet){
+        for (char alph : alphabet) {
             finalAlph += alph + " ";
         }
 
-
-        for(DFAState end : finalStates){
+        for (DFAState end : finalStates) {
             finalPrint += end.getName() + " ";
         }
 
         output += "Q = { ";
-        for(DFAState state : totalStates){
+        for (DFAState state : totalStates) {
             output += state.getName() + " ";
         }
 
         output += "}\n";
-        output += "Sigma = { " + finalAlph + "}\n" +
-        "delta =\n" + 
-        "           " + "\n" + table +
-        "q0 = " + initialState.getName() + "\n" +
-        "F = { " + finalPrint + "}" + "\n";
+        output += "Sigma = { " + finalAlph + "}\n" + "delta =\n" + "           " + "\n" + table + "q0 = "
+                + initialState.getName() + "\n" + "F = { " + finalPrint + "}" + "\n";
 
         return output;
     }
