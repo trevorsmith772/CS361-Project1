@@ -6,16 +6,16 @@ import java.util.Map;
 import fa.State;
 
 public class DFAState extends State {
-    
+
     /* Instance Variables */
-    private HashMap<Character, DFAState> transitions; //transition map
+    private HashMap<Character, DFAState> transitions; // transition map
 
     /**
      * Cosntructor for DFA state
      * 
      * @param name - name of the new state
      */
-    public DFAState(String name){
+    public DFAState(String name) {
         this.name = name;
         transitions = new HashMap<>();
     }
@@ -24,9 +24,9 @@ public class DFAState extends State {
      * Creates a new transition for the state
      * 
      * @param inputChar - input character from the alphabet
-     * @param toState - state we're transitioning to
+     * @param toState   - state we're transitioning to
      */
-    public void addTransition(char inputChar, DFAState toState){
+    public void addTransition(char inputChar, DFAState toState) {
         transitions.put(inputChar, toState);
     }
 
@@ -35,8 +35,8 @@ public class DFAState extends State {
      * 
      * @return transitions for the state
      */
-    public Map<Character, DFAState> getTransition(){
-        
+    public Map<Character, DFAState> getTransition() {
+
         return transitions;
     }
 
@@ -46,14 +46,5 @@ public class DFAState extends State {
             return null;
         else
             return ret;
-    }
-
-    /**
-     * Getter for name
-     * 
-     * @return the name of the state
-     */
-    public String getName() {
-        return name;
     }
 }

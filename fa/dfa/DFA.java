@@ -73,9 +73,14 @@ public class DFA implements DFAInterface {
      */
     public void addTransition(String fromState, char onSymb, String toState) {
         DFAState fState = get(fromState);
+        totalStates.remove(fState);
         DFAState tState = get(toState);
 
         fState.addTransition(onSymb, tState);
+        totalStates.add(fState);
+        if(!alphabet.contains(onSymb)){
+            alphabet.add(onSymb);
+        }
     }
 
     /**
