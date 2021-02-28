@@ -149,7 +149,14 @@ public class DFA implements DFAInterface {
         return alphabet;
     }
 
-    @Override
+    /**
+     * Takes in a string and determines whether
+     *  the DFA accepts it or not
+     * 
+     * @param s input string to be tested
+     * @return true if the string is accepted, 
+     *  otherwise false.
+     */
     public boolean accepts(String s) {
         DFAState currState = initialState;
         if(s.equals("e") && finalStates.contains(initialState)){
