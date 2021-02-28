@@ -14,7 +14,7 @@ import java.util.Set;
  * @author Brandon Mattaini (brandonmattaini)
  * @author Berto Cisneros (bertocisneros)
  * 
- *         Date: 2/28/2021
+ * Date: 2/28/2021
  */
 public class DFA implements DFAInterface {
 
