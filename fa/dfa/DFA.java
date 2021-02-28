@@ -186,11 +186,16 @@ public class DFA implements DFAInterface {
 
 
         String finalPrint = "";
+        String finalAlph = "";
 
-        for(DFAState ok : finalStates){
-            finalPrint += ok.getName() + " ";
+        for(char alph : alphabet){
+            finalAlph += alph + " ";
         }
 
+
+        for(DFAState end : finalStates){
+            finalPrint += end.getName() + " ";
+        }
 
         output += "Q = { ";
         for(DFAState state : totalStates){
@@ -198,7 +203,7 @@ public class DFA implements DFAInterface {
         }
 
         output += "}\n";
-        output += "Sigma = { "; + alphabet.toString() + " }\n" + 
+        output += "Sigma = { " + finalAlph + "}\n" +
         "delta =\n" + 
         "           " + "\n" + tab +
         "q0 = " + initialState.getName() + "\n" +
