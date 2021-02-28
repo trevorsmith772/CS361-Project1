@@ -4,7 +4,19 @@ import fa.State;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-
+/**
+ * Description: This class represents a DFA object
+ *  that contains variables to represent a 5-tuple.
+ *  This class is used in combination with DFADriver to
+ *  construct a DFA and return whether given strings are 
+ *  accepted or rejected by the DFA.
+ * 
+ * @author Trevor Smith (trevorsmith772)
+ * @author Brandon Mattaini (brandonmattaini)
+ * @author Berto Cisneros (bertocisneros)
+ * 
+ * Date: 2/28/2021
+ */
 public class DFA implements DFAInterface {
 
     /* Instance Variables to implement 5-tuple */
