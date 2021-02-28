@@ -38,6 +38,11 @@ thinking.
 
 ## Testing
 
+For testing this project, we compiled and ran the DFADriver class with the 3 given test files
+to be able to compare our results. If we found any issues with our code we would run
+the other two tests to see if they contained the same problems and we went from there.
+We were able to match the correct output for all 3 tests provided to us.
+
 In this section, tell us how you tested your project.
 
 You are expected to test your projects before submitting them for
