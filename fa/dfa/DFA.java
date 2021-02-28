@@ -152,6 +152,9 @@ public class DFA implements DFAInterface {
     @Override
     public boolean accepts(String s) {
         DFAState currState = initialState;
+        if(s.equals("e") && finalStates.contains(initialState)){
+            return true;
+        }
         for (int i = 0; i < s.length(); i++) {
             currState = getToState(currState, s.charAt(i));
         }
