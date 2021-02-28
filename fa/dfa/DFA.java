@@ -185,7 +185,7 @@ public class DFA implements DFAInterface {
         "delta =\n" + 
         "           " + "\n" + tab +
         "q0 = " + initialState.getName() + "\n" +
-        "F = { " + finalStates.toString() + "\n";
+        "F = { " + finalStates.toString() + " }" + "\n";
 
         return output;
     }
