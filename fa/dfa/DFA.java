@@ -181,7 +181,7 @@ public class DFA implements DFAInterface {
         output += "Q = { " + totalStates.toString() + " }\n" + 
         "Sigma = { " + alphabet.toString() + " }\n" + 
         "delta =\n" + 
-        "           " + alphabet.toString() + "\n" + tab +
+        "           " + "\n" + tab +
         "q0 = " + initialState.getName() + "\n" +
         "F = { " + finalStates.toString() + "\n";
 
