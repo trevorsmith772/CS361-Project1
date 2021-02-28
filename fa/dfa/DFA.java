@@ -155,14 +155,19 @@ public class DFA implements DFAInterface {
     
     public String toString() {
         String output = "";
+        int total = totalStates.size();
+
         output += "Q = { " + totalStates.toString() + " }\n" + 
         "Sigma = { " + alphabet.toString() + " }\n" + 
         "delta =\n" + 
-        "           " + alphabet.toString() + "\n" + 
-        "       a   a   b\n" + 
-        "       b   a   b\n" + 
-        "q0 = " + initialState.toString() + "\n" + 
-        "F = { " + finalStates.toString() + " }";
+        "           " + alphabet.toString() + "\n";
+        for(int i = 0; i <= total; i++){
+            output += alphabet.forEach(alphabet::toString);
+        }
+        // "       a   a   b\n" + 
+        // "       b   a   b\n" + 
+        // "q0 = " + initialState.toString() + "\n" + 
+        // "F = { " + finalStates.toString() + " }";
         return output;
     }
 }
