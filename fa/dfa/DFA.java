@@ -162,6 +162,8 @@ public class DFA implements DFAInterface {
         }
     }
 
+    // haha
+
     /**
      * Gets the state that will be transitioned to, given a from state and an input
      * character
