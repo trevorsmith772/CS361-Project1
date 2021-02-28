@@ -34,5 +34,61 @@
             "projectName": "CS361-Project1",
             "args": "./tests/p1tc3.txt"
         },
+        {
+            "type": "java",
+            "name": "Test 4",
+            "request": "launch",
+            "mainClass": "fa.dfa.DFADriver",
+            "projectName": "CS361-Project1",
+            "args": "./tests/p1tc4.txt"
+        },
+        {
+            "type": "java",
+            "name": "Test 4",
+            "request": "launch",
+            "mainClass": "fa.dfa.DFADriver",
+            "projectName": "CS361-Project1",
+            "args": "./tests/p1tc5.txt"
+        },
+        {
+            "type": "java",
+            "name": "Test 4",
+            "request": "launch",
+            "mainClass": "fa.dfa.DFADriver",
+            "projectName": "CS361-Project1",
+            "args": "./tests/p1tc6.txt"
+        },
+        {
+            "type": "java",
+            "name": "Test 4",
+            "request": "launch",
+            "mainClass": "fa.dfa.DFADriver",
+            "projectName": "CS361-Project1",
+            "args": "./tests/p1tc7.txt"
+        },
+        {
+            "type": "java",
+            "name": "Test 4",
+            "request": "launch",
+            "mainClass": "fa.dfa.DFADriver",
+            "projectName": "CS361-Project1",
+            "args": "./tests/p1tc8.txt"
+        },
+        {
+            "type": "java",
+            "name": "Test 4",
+            "request": "launch",
+            "mainClass": "fa.dfa.DFADriver",
+            "projectName": "CS361-Project1",
+            "args": "./tests/p1tc9.txt"
+        },
+        {
+            "type": "java",
+            "name": "Test 4",
+            "request": "launch",
+            "mainClass": "fa.dfa.DFADriver",
+            "projectName": "CS361-Project1",
+            "args": "./tests/p1tc10.txt"
+        }
     ]
 }
