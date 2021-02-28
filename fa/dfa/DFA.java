@@ -34,6 +34,8 @@ public class DFA implements DFAInterface {
         alphabet = new LinkedHashSet<>();
     }
 
+    // haha
+
 
     /**
      * Adds a new start state to the dfa
