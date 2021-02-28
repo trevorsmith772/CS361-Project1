@@ -2,16 +2,24 @@ package fa.dfa;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import fa.State;
 
+/**
+ * Description: This class represents a single DFA state, which extends the
+ * State.java class. This object contains a hash map to keep track of its
+ * transitions within its DFA.
+ * 
+ * @author Trevor Smith (trevorsmith772)
+ * @author Brandon Mattaini (brandonmattaini)
+ * @author Berto Cisneros (bertocisneros)
+ */
 public class DFAState extends State {
 
     /* Instance Variables */
     private HashMap<Character, DFAState> transitions; // transition map
 
     /**
-     * Cosntructor for DFA state
+     * Constructor for DFA state
      * 
      * @param name - name of the new state
      */
@@ -39,5 +47,4 @@ public class DFAState extends State {
 
         return transitions;
     }
-
 }
