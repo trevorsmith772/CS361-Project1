@@ -8,8 +8,7 @@ import fa.State;
 public class DFAState extends State {
     
     /* Instance Variables */
-    private String name;    //name of the state
-    private Map<Character, DFAState> transitions; //transition map
+    private HashMap<Character, DFAState> transitions; //transition map
 
     /**
      * Cosntructor for DFA state
