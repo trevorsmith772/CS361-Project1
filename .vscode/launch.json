@@ -44,7 +44,7 @@
         },
         {
             "type": "java",
-            "name": "Test 4",
+            "name": "Test 5",
             "request": "launch",
             "mainClass": "fa.dfa.DFADriver",
             "projectName": "CS361-Project1",
@@ -52,7 +52,7 @@
         },
         {
             "type": "java",
-            "name": "Test 4",
+            "name": "Test 6",
             "request": "launch",
             "mainClass": "fa.dfa.DFADriver",
             "projectName": "CS361-Project1",
@@ -60,7 +60,7 @@
         },
         {
             "type": "java",
-            "name": "Test 4",
+            "name": "Test 7",
             "request": "launch",
             "mainClass": "fa.dfa.DFADriver",
             "projectName": "CS361-Project1",
@@ -68,7 +68,7 @@
         },
         {
             "type": "java",
-            "name": "Test 4",
+            "name": "Test 8",
             "request": "launch",
             "mainClass": "fa.dfa.DFADriver",
             "projectName": "CS361-Project1",
@@ -76,7 +76,7 @@
         },
         {
             "type": "java",
-            "name": "Test 4",
+            "name": "Test 9",
             "request": "launch",
             "mainClass": "fa.dfa.DFADriver",
             "projectName": "CS361-Project1",
@@ -84,7 +84,7 @@
         },
         {
             "type": "java",
-            "name": "Test 4",
+            "name": "Test 10",
             "request": "launch",
             "mainClass": "fa.dfa.DFADriver",
             "projectName": "CS361-Project1",
