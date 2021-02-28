@@ -176,16 +176,24 @@ public class DFA implements DFAInterface {
         }
 
 
+        String finalPrint = "";
+
+        for(DFAState ok : finalStates){
+            finalPrint += ok.getName() + " ";
+        }
+
+
         output += "Q = { ";
         for(DFAState state : totalStates){
             output += state.getName() + " ";
         }
+
         output += "}\n";
         output += "Sigma = { " + alphabet.toString() + " }\n" + 
         "delta =\n" + 
         "           " + "\n" + tab +
         "q0 = " + initialState.getName() + "\n" +
-        "F = { " + finalStates.toString() + " }" + "\n";
+        "F = { " + finalPrint + "}" + "\n";
 
         return output;
     }
