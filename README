@@ -43,9 +43,3 @@ to be able to compare our results. If we found any issues with our code we would
 the other two tests to see if they contained the same problems and we went from there.
 We were able to match the correct output for all 3 tests provided to us.
 
-In this section, tell us how you tested your project.
-
-You are expected to test your projects before submitting them for
-final review. Pretend that your instructor is your manager or 
-customer at work. How would you ensure that you are delivering a 
-working solution to their requirements?
