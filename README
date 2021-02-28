@@ -5,7 +5,6 @@
 * Semester: Spring 2021
 
 
-
 ## Overview
 
 This program is an implementation of a deterministic finite automaton. The program takes in a file and reads the states, alphabet, and transitions, and determines whether specific input strings are valid or not.
@@ -31,10 +30,8 @@ This project overall was not too bad. I would say that having to use the Set cla
 
 3) Our last issue that we had was just formatting for the toString, where we just had to switch from using the Set's provided toString method, to iterating through the set and printing each element directly.
 
+
 ## Testing
 
-For testing this project, we compiled and ran the DFADriver class with the 3 given test files
-to be able to compare our results. If we found any issues with our code we would run
-the other two tests to see if they contained the same problems and we went from there.
-We were able to match the correct output for all 3 tests provided to us.
+For testing this project, we compiled and ran the DFADriver class with the 3 given test files to be able to compare our results. If we found any issues with our code we would run the other two tests to see if they contained the same problems and we went from there. We were able to match the correct output for all 3 tests provided to us.
 
