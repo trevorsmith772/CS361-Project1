@@ -1,7 +1,7 @@
-a d
-a
-b c
-a0b a1c b0c b1d c0c c1c d0c d1b
+0 3
+0
+1 2
+0a1 0b2 1a2 1b3 2a2 2b2 3a2 3b1
 ba
 aba
 abbb
