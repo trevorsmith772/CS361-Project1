@@ -138,7 +138,9 @@ public class DFA implements DFAInterface {
 
     @Override
     public boolean accepts(String s) {
-        // TODO Auto-generated method stub
+
+
+
         return false;
     }
 
@@ -162,17 +164,17 @@ public class DFA implements DFAInterface {
         String output = "";
         int total = totalStates.size();
 
-        String tab = "\t\t";
+        String tab = "\t";
         for(char b : alphabet){
-            tab += b + "\t\t";
+            tab += b + "\t";
         }
         tab += "\n";
 
         for(DFAState target: totalStates){
-            tab += "\t\t" + target.getName() + "\t\t";
+            tab += target.getName() + "\t";
 
             for(char c : alphabet){
-                tab += getToState(target, c).getName() + "\t\t";
+                tab += getToState(target, c).getName() + "\t";
             }
             tab += "\n";
         }
