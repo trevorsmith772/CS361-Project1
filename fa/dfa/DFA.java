@@ -1,26 +1,26 @@
 package fa.dfa;
 
 import fa.State;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 
 public class DFA implements DFAInterface {
 
     /* Instance Variables to implement 5-tuple */
-    private Set<DFAState> totalStates; // Q
+    private LinkedHashSet<DFAState> totalStates; // Q
     private DFAState initialState; // q0
-    private Set<DFAState> finalStates; // F
-    private Set<Character> alphabet; // Sigma
+    private LinkedHashSet<DFAState> finalStates; // F
+    private LinkedHashSet<Character> alphabet; // Sigma
 
     /**
      * DFA constructor. Sets all variables to null
      */
     public DFA() {
-        totalStates = new HashSet<>();
+        totalStates = new LinkedHashSet<>();
         initialState = null;
-        finalStates = new HashSet<>();
-        alphabet = new HashSet<>();
+        finalStates = new LinkedHashSet<>();
+        alphabet = new LinkedHashSet<>();
     }
 
     /**
@@ -74,10 +74,9 @@ public class DFA implements DFAInterface {
     public void addTransition(String fromState, char onSymb, String toState) {
         DFAState fState = get(fromState);
         DFAState tState = get(toState);
-        totalStates.remove(fState);
 
         fState.addTransition(onSymb, tState);
-        totalStates.add(fState);
+
         if(!alphabet.contains(onSymb)){
             alphabet.add(onSymb);
         }
