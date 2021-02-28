@@ -33,6 +33,7 @@ public class DFA implements DFAInterface {
         finalStates = new LinkedHashSet<>();
         alphabet = new LinkedHashSet<>();
     }
+    // haha
 
     /**
      * Adds a new start state to the dfa
