@@ -165,7 +165,11 @@ public class DFA implements DFAInterface {
         return from.getTransition().get(onSymb);
     }
 
-    
+
+
+    /*
+     * @return the state, alphabet, table, etc. are printed out
+     */
     public String toString() {
         String output = "";
 
