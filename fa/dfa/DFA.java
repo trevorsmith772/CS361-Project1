@@ -138,7 +138,16 @@ public class DFA implements DFAInterface {
 
     @Override
     public boolean accepts(String s) {
-        return false;
+        DFAState currState = initialState;
+        for(int i = 0; i < s.length(); i++){
+            currState = getToState(currState, s.charAt(i));
+        }
+        if(finalStates.contains(currState)){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     /**
@@ -151,7 +160,7 @@ public class DFA implements DFAInterface {
      * @param onSymb - input character
      * @return the state we are transitioning to
      */
-    public State getToState(DFAState from, char onSymb) {
+    public DFAState getToState(DFAState from, char onSymb) {
         
         return from.getTransition().get(onSymb);
     }
@@ -189,7 +198,7 @@ public class DFA implements DFAInterface {
         }
 
         output += "}\n";
-        output += "Sigma = { " + alphabet.toString() + " }\n" + 
+        output += "Sigma = { "; + alphabet.toString() + " }\n" + 
         "delta =\n" + 
         "           " + "\n" + tab +
         "q0 = " + initialState.getName() + "\n" +
