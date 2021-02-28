@@ -1,0 +1,11 @@
+1 2
+0
+3 E
+0a2 0b1 1a2 1b3 2a2 2b1 3aE 3b1 EaE EbE
+bb
+ababbaaaa
+b
+a
+aba
+bbbaab
+e
