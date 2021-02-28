@@ -10,8 +10,8 @@ public class DFA implements DFAInterface {
     /* Instance Variables to implement 5-tuple */
     private Set<DFAState> totalStates; // Q
     private DFAState initialState; // q0
-    private Set<DFAState> finalStates = new HashSet<>(); // F
-    private Set<Character> alphabet = new HashSet<>(); // Sigma
+    private Set<DFAState> finalStates; // F
+    private Set<Character> alphabet; // Sigma
 
     /**
      * DFA constructor. Sets all variables to null

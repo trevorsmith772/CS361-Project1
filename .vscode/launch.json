@@ -12,11 +12,27 @@
         },
         {
             "type": "java",
-            "name": "Debug (Launch)-DFADriver<CS361-Project1>",
+            "name": "Test 1",
             "request": "launch",
             "mainClass": "fa.dfa.DFADriver",
             "projectName": "CS361-Project1",
             "args": "./tests/p1tc1.txt"
-        }
+        },
+        {
+            "type": "java",
+            "name": "Test 2",
+            "request": "launch",
+            "mainClass": "fa.dfa.DFADriver",
+            "projectName": "CS361-Project1",
+            "args": "./tests/p1tc2.txt"
+        },
+        {
+            "type": "java",
+            "name": "Test 3",
+            "request": "launch",
+            "mainClass": "fa.dfa.DFADriver",
+            "projectName": "CS361-Project1",
+            "args": "./tests/p1tc3.txt"
+        },
     ]
 }
