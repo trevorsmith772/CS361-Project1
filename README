@@ -4,6 +4,8 @@
 * Class: CS 361, Section 1 (Trevor & Berto), Section 2 (Brandon)
 * Semester: Spring 2021
 
+
+
 ## Overview
 
 This program is an implementation of a deterministic finite automaton. The program takes in a file and reads the states, alphabet, and transitions, and determines whether specific input strings are valid or not.
