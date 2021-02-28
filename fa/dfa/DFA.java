@@ -34,7 +34,7 @@ public class DFA implements DFAInterface {
         alphabet = new LinkedHashSet<>();
     }
 
-    // haha
+
 
 
     /**
