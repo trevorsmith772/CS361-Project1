@@ -12,6 +12,8 @@ import fa.State;
  * @author Trevor Smith (trevorsmith772)
  * @author Brandon Mattaini (brandonmattaini)
  * @author Berto Cisneros (bertocisneros)
+ * 
+ * Date: 2/28/2021
  */
 public class DFAState extends State {
 

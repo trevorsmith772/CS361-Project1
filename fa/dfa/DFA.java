@@ -13,8 +13,8 @@ import java.util.Set;
  * @author Trevor Smith (trevorsmith772)
  * @author Brandon Mattaini (brandonmattaini)
  * @author Berto Cisneros (bertocisneros)
- * haha
- *         Date: 2/28/2021
+ * 
+ * Date: 2/28/2021
  */
 public class DFA implements DFAInterface {
 
