@@ -172,19 +172,20 @@ public class DFA implements DFAInterface {
     public String toString() {
         String output = "";
 
-        String tab = "\t";
+        String table = "\t\t";
         for(char b : alphabet){
-            tab += b + "\t";
+            table += b + "\t";
         }
-        tab += "\n";
+        table += "\n";
 
         for(DFAState target: totalStates){
-            tab += target.getName() + "\t";
+            table += "\t";
+            table += target.getName() + "\t";
 
             for(char c : alphabet){
-                tab += getToState(target, c).getName() + "\t";
+                table += getToState(target, c).getName() + "\t";
             }
-            tab += "\n";
+            table += "\n";
         }
 
 
@@ -208,7 +209,7 @@ public class DFA implements DFAInterface {
         output += "}\n";
         output += "Sigma = { " + finalAlph + "}\n" +
         "delta =\n" + 
-        "           " + "\n" + tab +
+        "           " + "\n" + table +
         "q0 = " + initialState.getName() + "\n" +
         "F = { " + finalPrint + "}" + "\n";
 
