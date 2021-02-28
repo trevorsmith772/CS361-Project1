@@ -34,6 +34,9 @@ public class DFA implements DFAInterface {
         alphabet = new LinkedHashSet<>();
     }
 
+    // haha
+
+
     /**
      * Adds a new start state to the dfa
      * 
@@ -158,6 +161,8 @@ public class DFA implements DFAInterface {
             return false;
         }
     }
+
+    // haha
 
     /**
      * Gets the state that will be transitioned to, given a from state and an input
