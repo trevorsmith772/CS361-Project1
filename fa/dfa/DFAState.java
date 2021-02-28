@@ -41,6 +41,14 @@ public class DFAState extends State {
         return transitions;
     }
 
+    public DFAState getNextTransition(char transition) {
+        DFAState ret = transitions.get(transition);
+        if (ret == null)
+            return null;
+        else
+            return ret;
+    }
+
     /**
      * Getter for name
      * 

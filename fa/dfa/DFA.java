@@ -157,15 +157,28 @@ public class DFA implements DFAInterface {
         String output = "";
         int total = totalStates.size();
 
-        String[] arr = new String[total];
-        arr = totalStates.toArray(arr);
+        String tab = "\t\t";
+        for(char b : alphabet){
+            tab += b + "\t\t";
+        }
+        tab += "\n";
 
+        for(DFAState target: totalStates){
+            tab += "\t\t" + target.getName() + "\t\t";
+
+            for(char c : alphabet){
+                tab += target.getNextTransition(c).getName() + "\t\t";
+            }
+            tab += "\n";
+        }
 
 
         output += "Q = { " + totalStates.toString() + " }\n" + 
         "Sigma = { " + alphabet.toString() + " }\n" + 
         "delta =\n" + 
-        "           " + alphabet.toString() + "\n";
+        "           " + alphabet.toString() + "\n" + tab +
+        "q0 = " + getStartState().toString() + "\n" +
+        "F = { " + getFinalStates().toString() + "\n";
 
 
 
