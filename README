@@ -6,17 +6,17 @@
 
 ## Overview
 
-Concisely explain what the program does. If this exceeds a couple of
-sentences, you're going too far. Generally you should be pulling this
-right from the project specification. I don't want you to just cut and
-paste, but paraphrase what is stated in the project specification.
+This program is an implementation of a deterministic finite automaton. The program takes in a file and reads the states, alphabet, and transitions, and determines whether specific input strings are valid or not.
 
 ## Compiling and Using
 
-This section should tell the user how to compile your code.  It is
-also appropriate to instruct the user how to use your code. Does your
-program require user input? If so, what does your user need to know
-about it to use it as quickly as possible?
+In order to compile this program, make sure you are in the parent directory containing this README file. Once you are at this directory, run the command shown below to compile the whole package:
+
+javac -cp . fa/dfa/DFADriver.java
+
+Then to run the program, run the following command, where <input file> is the file (and filepath) that the program will run.
+
+java fa/dfa/DFADriver <input file>
 
 ## Discussion
 
