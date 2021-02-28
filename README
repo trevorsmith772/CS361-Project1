@@ -20,21 +20,16 @@ Then to run the program, run the following command, where <input file> is the fi
 
 java fa/dfa/DFADriver <input file>
 
+
 ## Discussion
 
-Discuss the issues and successes you encountered during programming
-(development). Here are some questions to get you started. You don't
-have to answer all of them in order - they are a guideline to get you
-thinking.
-  * What problems did you have? What went well?
-  * What process did you go through to create the program?
-  * What did you have to research and learn on your own?
-  * What kinds of errors did you get? How did you fix them?
-  * What parts of the project did you find challenging?
-  * Is there anything that finally "clicked" for you in the process 
-  of working on this project?
-  * Is there anything that you would change about the project?
-  * Can you apply what you learned in this project to future projects?
+This project overall was not too bad. I would say that having to use the Set class is where the most difficulty came from. This was a class that we weren't super familiar with, and we found it somewhat difficult to use for certain operations. We believe it would've been easier to implement using a list or an array, but learning about the set class was still helpful. Most of the project went very smoothly without any problems, but we had few issues that took more time to solve which are outlined below:
+
+1) We had an issue with states appearing as null, where each state had a DFAState name (which was correct), and a State name. This was simply because we had mistakenly added a name variable to the DFAState class which was unneeded as the State class has its own name variable.
+
+2) We had issues with our states not maintaining the correct order from how they were read into the file. It turns out that this was an issue in our addTransition method, where we were removing a state from the set and re-adding an updated version back to the set. To fix this, we just made the method update the state directly without removing and re-adding.
+
+3) Our last issue that we had was just formatting for the toString, where we just had to switch from using the Set's provided toString method, to iterating through the set and printing each element directly.
 
 ## Testing
 
