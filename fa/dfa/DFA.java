@@ -73,8 +73,8 @@ public class DFA implements DFAInterface {
      */
     public void addTransition(String fromState, char onSymb, String toState) {
         DFAState fState = get(fromState);
-        totalStates.remove(fState);
         DFAState tState = get(toState);
+        totalStates.remove(fState);
 
         fState.addTransition(onSymb, tState);
         totalStates.add(fState);
@@ -172,7 +172,7 @@ public class DFA implements DFAInterface {
             tab += "\t\t" + target.getName() + "\t\t";
 
             for(char c : alphabet){
-                tab += target.getNextTransition(c).getName() + "\t\t";
+                tab += getToState(target, c).getName() + "\t\t";
             }
             tab += "\n";
         }
