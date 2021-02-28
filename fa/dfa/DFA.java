@@ -14,7 +14,7 @@ import java.util.Set;
  * @author Brandon Mattaini (brandonmattaini)
  * @author Berto Cisneros (bertocisneros)
  * 
- * Date: 2/28/2021
+ *         Date: 2/28/2021
  */
 public class DFA implements DFAInterface {
 
@@ -33,9 +33,6 @@ public class DFA implements DFAInterface {
         finalStates = new LinkedHashSet<>();
         alphabet = new LinkedHashSet<>();
     }
-
-
-
 
     /**
      * Adds a new start state to the dfa
@@ -150,16 +147,14 @@ public class DFA implements DFAInterface {
     }
 
     /**
-     * Takes in a string and determines whether
-     *  the DFA accepts it or not
+     * Takes in a string and determines whether the DFA accepts it or not
      * 
      * @param s input string to be tested
-     * @return true if the string is accepted, 
-     *  otherwise false.
+     * @return true if the string is accepted, otherwise false.
      */
     public boolean accepts(String s) {
         DFAState currState = initialState;
-        if(s.equals("e") && finalStates.contains(initialState)){
+        if (s.equals("e") && finalStates.contains(initialState)) {
             return true;
         }
         for (int i = 0; i < s.length(); i++) {
@@ -172,13 +167,11 @@ public class DFA implements DFAInterface {
         }
     }
 
-
-
     /**
      * Gets the state that will be transitioned to, given a from state and an input
      * character
      * 
-     * @param from   - state to be transitioned from
+     * @param from - state to be transitioned from
      * @param onSymb - input character
      * @return the state we are transitioning to
      */
@@ -187,16 +180,22 @@ public class DFA implements DFAInterface {
         return from.getTransition().get(onSymb);
     }
 
-    /**
-     * Construct the textual representation of the DFA, for example A simple two
-     * state DFA Q = { a b } Sigma = { 0 1 } delta = 0 1 a a b b a b q0 = a F = { b
-     * }
-     * 
-     * The order of the states and the alphabet is the order in which they were
-     * instantiated in the DFA.
-     * 
-     * @return String representation of the DFA
-     */
+	/**
+	 * Construct the textual representation of the DFA, for example
+	 * A simple two state DFA
+	 * Q = { a b }
+	 * Sigma = { 0 1 }
+	 * delta =
+	 *		0	1	
+	 *	a	a	b	
+	 *	b	a	b	
+	 * q0 = a
+	 * F = { b }
+	 * 
+	 * The order of the states and the alphabet is the order
+	 * in which they were instantiated in the DFA.
+	 * @return String representation of the DFA
+	 */
     public String toString() {
         String output = "";
 
