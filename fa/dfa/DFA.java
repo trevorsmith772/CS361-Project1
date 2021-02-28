@@ -138,9 +138,6 @@ public class DFA implements DFAInterface {
 
     @Override
     public boolean accepts(String s) {
-
-
-
         return false;
     }
 
@@ -162,7 +159,6 @@ public class DFA implements DFAInterface {
     
     public String toString() {
         String output = "";
-        int total = totalStates.size();
 
         String tab = "\t";
         for(char b : alphabet){
@@ -180,24 +176,17 @@ public class DFA implements DFAInterface {
         }
 
 
-        output += "Q = { " + totalStates.toString() + " }\n" + 
-        "Sigma = { " + alphabet.toString() + " }\n" + 
+        output += "Q = { ";
+        for(DFAState state : totalStates){
+            output += state.getName() + " ";
+        }
+        output += "}\n";
+        output += "Sigma = { " + alphabet.toString() + " }\n" + 
         "delta =\n" + 
         "           " + "\n" + tab +
         "q0 = " + initialState.getName() + "\n" +
         "F = { " + finalStates.toString() + "\n";
 
-
-
-
-
-//      for(int i = 0; i <= total; i++){
-//            output += alphabet.forEach(alphabet:toString);
-//        }
-        // "       a   a   b\n" + 
-        // "       b   a   b\n" + 
-        // "q0 = " + initialState.toString() + "\n" + 
-        // "F = { " + finalStates.toString() + " }";
         return output;
     }
 }
