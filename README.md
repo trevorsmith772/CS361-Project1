@@ -15,9 +15,9 @@ In order to compile this program, make sure you are in the parent directory cont
 
 javac fa/dfa/DFADriver.java
 
-Then to run the program, run the following command, where <input file> is the file (and filepath) that the program will run.
+Then to run the program, run the following command, where \<input file> is the file (and filepath) that the program will run.
 
-java fa.dfa.DFADriver <input file>
+java fa.dfa.DFADriver \<input file>
 
 
 ## Discussion
